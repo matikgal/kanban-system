@@ -1,0 +1,5 @@
+{
+  "name": "FluxBoard",
+  "description": "Eksperymentalna tablica Kanban z organicznym interfejsem, obsługą przeciągania, podzadaniami i abstrakcyjną ikonografią.",
+  "requestFramePermissions": []
+}
