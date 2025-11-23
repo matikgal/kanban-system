@@ -1,47 +1,51 @@
-# FluxBoard // KANBAN_SYSTEM
+# FluxBoard: System Kanban
 
-Eksperymentalna, minimalistyczna aplikacja do zarządzania projektami typu Kanban, kładąca nacisk na unikalny design, typografię i interakcję ("Flux").
+Eksperymentalna, **minimalistyczna** aplikacja do zarządzania projektami typu **Kanban**, skupiająca się na unikalnym designie i **płynnej interakcji**.
 
-## 🎯 O Projekcie
+## Opis Projektu
 
-FluxBoard odchodzi od tradycyjnego wyglądu narzędzi biurowych (SaaS). Zamiast standardowych kart i cieni, wykorzystuje surową estetykę inspirowaną brutalizmem cyfrowym oraz stylem "Swiss Style". Interfejs jest responsywny i zaprojektowany z myślą o płynności działania.
+FluxBoard to odświeżone podejście do narzędzi Kanban. Odchodzi od typowej estetyki biurowej (SaaS) na rzecz surowego, cyfrowego **brutalizmu** i estetyki **Swiss Style**. Interfejs został zaprojektowany z myślą o **responsywności** i maksymalnej **płynności** działania ("Flux").
 
-### ✨ Kluczowe Funkcje
+## Kluczowe Funkcje
 
-*   **System Przeciągnij i Upuść (Drag & Drop)**: Płynne przenoszenie zadań między kolumnami.
-*   **Dualizm Motywów**: 
-    *   *Void* (Ciemny): Głębokie grafity, surowy kontrast.
-    *   *Paper* (Jasny): Estetyka technicznego papieru i betonu.
-*   **Zarządzanie Zadaniami**:
-    *   Podzadania (Checklisty).
-    *   Tagowanie i Priorytetyzacja.
-    *   Śledzenie czasu pracy (Time Tracking).
-    *   Historia zmian (Audit Log).
-*   **UX**:
-    *   Zwijanie kolumn (Focus Mode).
-    *   Obsługa skrótów klawiszowych (ESC, Enter).
-    *   Filtrowanie w czasie rzeczywistym.
-*   **Persistence**: Automatyczny zapis stanu tablicy i motywu w pamięci lokalnej przeglądarki (LocalStorage).
+* **Płynny Drag & Drop**: Łatwe przenoszenie zadań między kolumnami.
+* **Dualizm Motywów**: Dwa unikalne motywy kolorystyczne:
+    * **Void** (Ciemny): Głębokie grafity i wysoki kontrast.
+    * **Paper** (Jasny): Estetyka technicznego papieru.
+* **Kompleksowe Zarządzanie Zadaniami**:
+    * Obsługa podzadań (**Checklisty**).
+    * Tagowanie i **Priorytetyzacja**.
+    * Śledzenie czasu pracy (**Time Tracking**).
+    * Historia zmian (**Audit Log**).
+* **Użyteczność (UX)**:
+    * Tryb skupienia (**Focus Mode**) poprzez zwijanie kolumn.
+    * Wsparcie dla klawiatury (**skróty klawiszowe**).
+    * Filtrowanie zadań w czasie rzeczywistym.
+* **Persistence**: Automatyczny zapis stanu tablicy i wybranego motywu w **LocalStorage** przeglądarki (aplikacja działa po stronie klienta).
 
-## 🛠️ Technologie
+## Technologie
 
-Projekt został zbudowany w oparciu o nowoczesny stack frontendowy:
+Projekt został zbudowany przy użyciu nowoczesnego stosu frontendowego:
 
-*   **React 19**: Wykorzystanie najnowszych hooków i mechanizmów renderowania.
-*   **TypeScript**: Pełne typowanie danych (Interfejsy dla Task, Column, History).
-*   **Tailwind CSS**: Utility-first CSS do stylizacji i responsywności.
-*   **SVG Icons**: Ręcznie rysowane, abstrakcyjne ikony (bez zewnętrznych bibliotek ikon).
-*   **Fonty**: 
-    *   *Syne*: Nagłówki i elementy displayowe.
-    *   *Space Grotesk*: Tekst główny i interfejs.
+* **React 19**: Wykorzystanie najnowszych mechanizmów.
+* **TypeScript**: Pełne typowanie dla poprawy stabilności i czytelności kodu.
+* **Tailwind CSS**: Utility-first CSS do szybkiego i responsywnego stylizowania.
+* **SVG Icons**: Ręcznie tworzone abstrakcyjne ikony.
+* **Fonty**: Syne (nagłówki) i Space Grotesk (tekst główny).
 
-## 🚀 Uruchomienie
+## Uruchomienie
 
-Aplikacja działa całkowicie po stronie klienta (Client-Side). Nie wymaga konfiguracji bazy danych.
+Aplikacja jest w pełni **Client-Side** i nie wymaga konfiguracji bazy danych ani backendu.
 
-1. Zainstaluj zależności: `npm install`
-2. Uruchom serwer deweloperski: `npm start`
-3. Otwórz w przeglądarce.
+1.  **Instalacja zależności**:
+    ```bash
+    npm install
+    ```
+2.  **Uruchomienie serwera deweloperskiego**:
+    ```bash
+    npm start
+    ```
+3.  Otwórz aplikację w przeglądarce.
 
 ---
-*Design & Code by System_v.1.0*
+*Design & Code by [matikgal](https://github.com/matikgal)*
