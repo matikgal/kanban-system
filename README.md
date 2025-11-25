@@ -1,51 +1,74 @@
-# FluxBoard: System Kanban
+# Kanban System
 
-Eksperymentalna, **minimalistyczna** aplikacja do zarządzania projektami typu **Kanban**, skupiająca się na unikalnym designie i **płynnej interakcji**.
+## Krótki Opis
 
-## Opis Projektu
+Kanban System to minimalistyczna aplikacja do zarządzania projektami w stylu Kanban, łącząca estetykę cyfrowego brutalizmu z intuicyjnym interfejsem użytkownika. Projekt demonstruje umiejętności w zakresie tworzenia zaawansowanych aplikacji webowych z naciskiem na UX, responsywność i nowoczesny design.
 
-FluxBoard to odświeżone podejście do narzędzi Kanban. Odchodzi od typowej estetyki biurowej (SaaS) na rzecz surowego, cyfrowego **brutalizmu** i estetyki **Swiss Style**. Interfejs został zaprojektowany z myślą o **responsywności** i maksymalnej **płynności** działania ("Flux").
+---
 
 ## Kluczowe Funkcje
 
-* **Płynny Drag & Drop**: Łatwe przenoszenie zadań między kolumnami.
-* **Dualizm Motywów**: Dwa unikalne motywy kolorystyczne:
-    * **Void** (Ciemny): Głębokie grafity i wysoki kontrast.
-    * **Paper** (Jasny): Estetyka technicznego papieru.
-* **Kompleksowe Zarządzanie Zadaniami**:
-    * Obsługa podzadań (**Checklisty**).
-    * Tagowanie i **Priorytetyzacja**.
-    * Śledzenie czasu pracy (**Time Tracking**).
-    * Historia zmian (**Audit Log**).
-* **Użyteczność (UX)**:
-    * Tryb skupienia (**Focus Mode**) poprzez zwijanie kolumn.
-    * Wsparcie dla klawiatury (**skróty klawiszowe**).
-    * Filtrowanie zadań w czasie rzeczywistym.
-* **Persistence**: Automatyczny zapis stanu tablicy i wybranego motywu w **LocalStorage** przeglądarki (aplikacja działa po stronie klienta).
-
-## Technologie
-
-Projekt został zbudowany przy użyciu nowoczesnego stosu frontendowego:
-
-* **React 19**: Wykorzystanie najnowszych mechanizmów.
-* **TypeScript**: Pełne typowanie dla poprawy stabilności i czytelności kodu.
-* **Tailwind CSS**: Utility-first CSS do szybkiego i responsywnego stylizowania.
-* **SVG Icons**: Ręcznie tworzone abstrakcyjne ikony.
-* **Fonty**: Syne (nagłówki) i Space Grotesk (tekst główny).
-
-## Uruchomienie
-
-Aplikacja jest w pełni **Client-Side** i nie wymaga konfiguracji bazy danych ani backendu.
-
-1.  **Instalacja zależności**:
-    ```bash
-    npm install
-    ```
-2.  **Uruchomienie serwera deweloperskiego**:
-    ```bash
-    npm start
-    ```
-3.  Otwórz aplikację w przeglądarce.
+- System Przeciągnij i Upuść (Drag & Drop) do zarządzania zadaniami
+- Dualizm motywów: Void (ciemny) i Paper (jasny)
+- Zaawansowane zarządzanie zadaniami z podzadaniami i priorytetami
+- Śledzenie czasu pracy (Time Tracking) i historia zmian (Audit Log)
+- Filtrowanie zadań w czasie rzeczywistym
+- Tryb Focus Mode z możliwością zwijania kolumn
+- Obsługa skrótów klawiszowych dla szybszej pracy
+- Automatyczny zapis stanu w LocalStorage
 
 ---
-*Design & Code by [matikgal](https://github.com/matikgal)*
+
+## Technologie i Narzędzia
+
+Projekt został stworzony przy użyciu następujących kluczowych technologii:
+
+### Frontend
+
+- **React 19** - Najnowsza wersja biblioteki do budowy interfejsu użytkownika
+- **TypeScript** - Pełne typowanie dla lepszej jakości kodu
+- **Tailwind CSS** - Utility-first framework do stylizacji
+- **Recharts** - Biblioteka do wizualizacji danych
+- **Custom SVG Icons** - Ręcznie zaprojektowane ikony w stylu abstrakcyjnym
+
+### Narzędzia Deweloperskie
+
+- **Vite** - Szybki bundler i dev server
+- **GitHub Pages** - Hosting statycznej aplikacji
+
+---
+
+## Zobacz Projekt
+
+Strona jest dostępna i hostowana publicznie pod adresem:
+
+https://matikgal.github.io/kanban-system/
+
+---
+
+## Instalacja i Uruchomienie
+
+```bash
+# Instalacja zależności
+npm install
+
+# Uruchomienie w trybie deweloperskim
+npm run dev
+
+# Build produkcyjny
+npm run build
+
+# Podgląd buildu
+npm run preview
+
+# Deploy na GitHub Pages
+npm run deploy
+```
+
+---
+
+## Autor
+
+- **Mateusz Gałuszka**
+- **GitHub** - [matikgal](https://github.com/matikgal)
+- **Projekt** - [kanban-system](https://github.com/matikgal/kanban-system)
