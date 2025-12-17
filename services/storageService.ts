@@ -26,7 +26,7 @@ const INITIAL_DATA: BoardData = {
         { id: 's-3', title: 'Szkice układu', completed: false },
       ],
       tags: ['Design', 'UX'],
-      accentColor: '#f43f5e', // Rose
+      accentColor: '#f43f5e',
       assignees: ['MK', 'AD'],
       timeSpent: 3600,
       history: [
@@ -46,7 +46,7 @@ const INITIAL_DATA: BoardData = {
           { id: 's-2-1', title: 'Konfiguracja Tailwind', completed: true }
       ],
       tags: ['Dev', 'Frontend'],
-      accentColor: '#eab308', // Yellow
+      accentColor: '#eab308',
       assignees: ['MK'],
       timeSpent: 1200,
       history: [],
@@ -57,11 +57,11 @@ const INITIAL_DATA: BoardData = {
       columnId: 'review',
       title: 'Optymalizacja Assets',
       description: 'Kompresja grafik i wideo do formatów webm/avif. Sprawdzenie wydajności ładowania.',
-      dueDate: new Date(Date.now() - 86400000).toISOString(), // Overdue
+      dueDate: new Date(Date.now() - 86400000).toISOString(),
       priority: 'high',
       subtasks: [],
       tags: ['Performance', 'Dev'],
-      accentColor: '#8b5cf6', // Violet
+      accentColor: '#8b5cf6',
       assignees: ['PL'],
       timeSpent: 5400,
       history: [],
@@ -80,7 +80,7 @@ const INITIAL_DATA: BoardData = {
           { id: 's-4-3', title: 'Inputs', completed: false },
       ],
       tags: ['Design', 'System'],
-      accentColor: '#06b6d4', // Cyan
+      accentColor: '#06b6d4',
       assignees: ['AD', 'MK'],
       timeSpent: 0,
       history: [],
@@ -98,7 +98,7 @@ const INITIAL_DATA: BoardData = {
           { id: 's-5-2', title: 'Wysłanie oferty', completed: true }
       ],
       tags: ['Meeting', 'Biz'],
-      accentColor: '#22c55e', // Green
+      accentColor: '#22c55e',
       assignees: ['CEO'],
       timeSpent: 1800,
       history: [],
@@ -113,7 +113,7 @@ const INITIAL_DATA: BoardData = {
       priority: 'high',
       subtasks: [],
       tags: ['Backend', 'API'],
-      accentColor: '#f97316', // Orange
+      accentColor: '#f97316',
       assignees: ['PL', 'MK'],
       timeSpent: 7200,
       history: [],
@@ -128,7 +128,7 @@ const INITIAL_DATA: BoardData = {
       priority: 'medium',
       subtasks: [],
       tags: ['DevOps', 'Infra'],
-      accentColor: '#3b82f6', // Blue
+      accentColor: '#3b82f6',
       assignees: ['JJ'],
       timeSpent: 0,
       history: [],
@@ -143,7 +143,7 @@ const INITIAL_DATA: BoardData = {
       priority: 'low',
       subtasks: [{id: 's-8-1', title: 'Sprawdzić nagłówki', completed: true}],
       tags: ['Content', 'Mkt'],
-      accentColor: '#d946ef', // Fuchsia
+      accentColor: '#d946ef',
       assignees: ['EK', 'CEO'],
       timeSpent: 900,
       history: [],

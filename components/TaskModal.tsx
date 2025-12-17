@@ -15,14 +15,14 @@ interface TaskModalProps {
 }
 
 const ACCENT_COLORS = [
-    '#ef4444', // Red
-    '#f97316', // Orange
-    '#eab308', // Yellow
-    '#22c55e', // Green
-    '#06b6d4', // Cyan
-    '#3b82f6', // Blue
-    '#8b5cf6', // Violet
-    '#d946ef', // Fuchsia
+    '#ef4444',
+    '#f97316',
+    '#eab308',
+    '#22c55e',
+    '#06b6d4',
+    '#3b82f6',
+    '#8b5cf6',
+    '#d946ef',
 ];
 
 export const TaskModal: React.FC<TaskModalProps> = ({
@@ -35,7 +35,7 @@ export const TaskModal: React.FC<TaskModalProps> = ({
   onSave,
   onDelete,
 }) => {
-  // Core State
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [priority, setPriority] = useState<Task['priority']>('low');
@@ -43,7 +43,7 @@ export const TaskModal: React.FC<TaskModalProps> = ({
   const [subtasks, setSubtasks] = useState<Subtask[]>([]);
   const [selectedColumnId, setSelectedColumnId] = useState<string>('todo');
   
-  // New Features State
+
   const [tags, setTags] = useState<string[]>([]);
   const [newTag, setNewTag] = useState('');
   const [accentColor, setAccentColor] = useState<string>('');
@@ -54,7 +54,7 @@ export const TaskModal: React.FC<TaskModalProps> = ({
   const [history, setHistory] = useState<HistoryEntry[]>([]);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
 
-  // Subtask Input
+
   const [newSubtaskTitle, setNewSubtaskTitle] = useState('');
   
   const timerRef = useRef<number | null>(null);
@@ -90,7 +90,7 @@ export const TaskModal: React.FC<TaskModalProps> = ({
     if(timerRef.current) clearInterval(timerRef.current);
   }, [task, isOpen, columnId]);
 
-  // Timer Logic
+
   useEffect(() => {
     if (isTimerRunning) {
         timerRef.current = window.setInterval(() => {
@@ -107,7 +107,7 @@ export const TaskModal: React.FC<TaskModalProps> = ({
   const handleSave = () => {
     if (!title.trim()) return;
 
-    // Add history entry for save
+
     const newHistory = [...history];
     if (!task) {
         newHistory.push({ id: `h-${Date.now()}`, action: 'UTWORZONO ZADANIE', timestamp: Date.now() });
@@ -134,7 +134,7 @@ export const TaskModal: React.FC<TaskModalProps> = ({
     onClose();
   };
 
-  // Helpers
+
   const addSubtask = () => {
     if (!newSubtaskTitle.trim()) return;
     setSubtasks([...subtasks, { id: `s-${Date.now()}`, title: newSubtaskTitle, completed: false }]);
@@ -169,7 +169,7 @@ export const TaskModal: React.FC<TaskModalProps> = ({
       return new Date(ts).toLocaleString('pl-PL', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit'});
   }
 
-  // Styles
+
   const isPaper = theme === 'paper';
   const modalBg = isPaper ? 'bg-[#E0E2E5]' : 'bg-[#161618]'; 
   const textColor = isPaper ? 'text-zinc-800' : 'text-[#E4E4E7]';
@@ -188,7 +188,7 @@ export const TaskModal: React.FC<TaskModalProps> = ({
         shadow-2xl
       `}>
         
-        {/* Header */}
+
         <div className={`flex justify-between items-stretch border-b ${borderColor} h-14 flex-shrink-0`}>
           <div className={`flex items-center px-6 border-r ${borderColor} flex-1`}>
              <div className={`w-2 h-2 mr-3 rounded-full`} style={{ backgroundColor: accentColor || (isPaper ? '#ccc' : '#333') }}></div>
@@ -197,7 +197,7 @@ export const TaskModal: React.FC<TaskModalProps> = ({
              </h2>
           </div>
           <div className="flex items-center px-4 gap-4">
-               {/* Time Tracker Header Control */}
+
                <div className={`flex items-center gap-3 font-mono text-sm ${textColor}`}>
                    <span>{formatTime(timeSpent)}</span>
                    <button 
@@ -213,10 +213,10 @@ export const TaskModal: React.FC<TaskModalProps> = ({
           </button>
         </div>
 
-        {/* 3-Column Grid Layout for Desktop */}
+
         <div className="flex-1 overflow-y-auto md:grid md:grid-cols-12">
             
-            {/* Left Column: Main Info (7 cols) */}
+
             <div className={`md:col-span-7 p-6 md:p-8 space-y-8 border-b md:border-b-0 md:border-r ${borderColor}`}>
                 <div className="space-y-2">
                     <label className={`block text-[10px] font-mono ${dimTextColor} uppercase tracking-widest`}>// TEMAT</label>
@@ -239,7 +239,7 @@ export const TaskModal: React.FC<TaskModalProps> = ({
                     />
                 </div>
 
-                 {/* Checklist */}
+
                 <div className={`pt-4`}>
                     <label className={`block text-[10px] font-mono ${dimTextColor} mb-3 uppercase tracking-widest`}>
                         PODZADANIA ({subtasks.filter(s => s.completed).length}/{subtasks.length})
@@ -269,10 +269,10 @@ export const TaskModal: React.FC<TaskModalProps> = ({
                 </div>
             </div>
 
-            {/* Right Column: Meta & Config (5 cols) */}
+
             <div className={`md:col-span-5 flex flex-col`}>
                 
-                {/* Section 1: Status & Priority */}
+
                 <div className={`p-6 border-b ${borderColor} space-y-6`}>
                     <div>
                         <label className={`block text-[10px] font-mono ${dimTextColor} mb-2 uppercase tracking-widest`}>KOLUMNA</label>
@@ -343,7 +343,7 @@ export const TaskModal: React.FC<TaskModalProps> = ({
                     </div>
                 </div>
 
-                {/* Section 2: Tags */}
+
                 <div className={`p-6 border-b ${borderColor}`}>
                      <label className={`block text-[10px] font-mono ${dimTextColor} mb-2 uppercase tracking-widest`}>TAGI</label>
                      <div className="flex flex-wrap gap-2 mb-2">
@@ -363,7 +363,7 @@ export const TaskModal: React.FC<TaskModalProps> = ({
                     />
                 </div>
 
-                {/* Section 3: Activity Log */}
+
                 <div className="flex-1 overflow-y-auto p-6 min-h-[150px]">
                      <label className={`block text-[10px] font-mono ${dimTextColor} mb-3 uppercase tracking-widest`}>DZIENNIK AKTYWNOŚCI</label>
                      <div className="space-y-2">
@@ -379,7 +379,7 @@ export const TaskModal: React.FC<TaskModalProps> = ({
             </div>
         </div>
 
-        {/* Footer */}
+
         <div className={`p-0 border-t ${borderColor} flex h-12 flex-shrink-0`}>
             {showDeleteConfirm ? (
                 <>

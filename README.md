@@ -1,74 +1,32 @@
-# Kanban System
+# Mateusz Gałuszka - FluxBoard (Kanban System)
 
-## Krótki Opis
+Zaawansowana aplikacja do zarządzania zadaniami typu Kanban, zaprojektowana z myślą o wydajności i minimalistycznej estetyce. Oferuje płynny system przeciągania elementów, obsługę motywów oraz responsywny interfejs dostosowany do urządzeń mobilnych.
 
-Kanban System to minimalistyczna aplikacja do zarządzania projektami w stylu Kanban, łącząca estetykę cyfrowego brutalizmu z intuicyjnym interfejsem użytkownika. Projekt demonstruje umiejętności w zakresie tworzenia zaawansowanych aplikacji webowych z naciskiem na UX, responsywność i nowoczesny design.
+## Demo
 
----
+Zobacz aplikację na żywo: <a href="https://matikgal.github.io/kanban-system/" target="_blank">Link</a>
 
-## Kluczowe Funkcje
+## O projekcie
 
-- System Przeciągnij i Upuść (Drag & Drop) do zarządzania zadaniami
-- Dualizm motywów: Void (ciemny) i Paper (jasny)
-- Zaawansowane zarządzanie zadaniami z podzadaniami i priorytetami
-- Śledzenie czasu pracy (Time Tracking) i historia zmian (Audit Log)
-- Filtrowanie zadań w czasie rzeczywistym
-- Tryb Focus Mode z możliwością zwijania kolumn
-- Obsługa skrótów klawiszowych dla szybszej pracy
-- Automatyczny zapis stanu w LocalStorage
+Projekt FluxBoard powstał jako nowoczesne narzędzie do organizacji pracy. Głównym celem było stworzenie interfejsu, który nie rozprasza użytkownika, a jednocześnie oferuje pełną kontrolę nad procesem realizacji zadań. Aplikacja wykorzystuje system "drag and drop" do intuicyjnego zarządzania statusem zadań (Todo / In Progress / Done) oraz przechowuje historię zmian. Unikalną cechą jest system motywów "Void" (ciemny) i "Paper" (jasny), dostosowujący wygląd do preferencji użytkownika.
 
----
+## Technologie
 
-## Technologie i Narzędzia
+- **Frontend:** ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+- **Inne:** ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-Projekt został stworzony przy użyciu następujących kluczowych technologii:
+## Główne funkcjonalności
 
-### Frontend
+- Intuicyjny system Drag & Drop do przenoszenia zadań
+- Dwa unikalne motywy graficzne: Void (Dark) oraz Paper (Light)
+- Możliwość zwijania kolumn dla oszczędności miejsca
+- Zaawansowane filtrowanie i wyszukiwanie zadań (tytuł, opis, tagi)
+- Szczegółowa historia zmian dla każdego zadania
+- Responsywność (Mobile First) z dedykowaną nawigacją mobilną
+- Automatyczny zapis danych w pamięci lokalnej (LocalStorage)
 
-- **React 19** - Najnowsza wersja biblioteki do budowy interfejsu użytkownika
-- **TypeScript** - Pełne typowanie dla lepszej jakości kodu
-- **Tailwind CSS** - Utility-first framework do stylizacji
-- **Recharts** - Biblioteka do wizualizacji danych
-- **Custom SVG Icons** - Ręcznie zaprojektowane ikony w stylu abstrakcyjnym
+## Kontakt
 
-### Narzędzia Deweloperskie
-
-- **Vite** - Szybki bundler i dev server
-- **GitHub Pages** - Hosting statycznej aplikacji
-
----
-
-## Zobacz Projekt
-
-Strona jest dostępna i hostowana publicznie pod adresem:
-
-https://matikgal.github.io/kanban-system/
-
----
-
-## Instalacja i Uruchomienie
-
-```bash
-# Instalacja zależności
-npm install
-
-# Uruchomienie w trybie deweloperskim
-npm run dev
-
-# Build produkcyjny
-npm run build
-
-# Podgląd buildu
-npm run preview
-
-# Deploy na GitHub Pages
-npm run deploy
-```
-
----
-
-## Autor
-
-- **Mateusz Gałuszka**
-- **GitHub** - [matikgal](https://github.com/matikgal)
-- **Projekt** - [kanban-system](https://github.com/matikgal/kanban-system)
+Email: mateusz.galuszka21@gmail.com
+<br>
+_Stworzone przez Mateusz Gałuszka_

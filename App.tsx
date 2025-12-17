@@ -7,7 +7,7 @@ import { BoardData, Task, Theme } from './types';
 import { getBoardData, saveBoardData, getTheme, saveTheme } from './services/storageService';
 
 const App: React.FC = () => {
-  // State
+
   const [boardData, setBoardData] = useState<BoardData>({ columns: [], tasks: [] });
   const [searchQuery, setSearchQuery] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -15,23 +15,23 @@ const App: React.FC = () => {
   const [activeColumnId, setActiveColumnId] = useState<string>('todo');
   const [theme, setTheme] = useState<Theme>('void');
   
-  // UX State
+
   const [collapsedColumns, setCollapsedColumns] = useState<string[]>([]);
 
-  // Load data
+
   useEffect(() => {
     setBoardData(getBoardData());
     setTheme(getTheme());
   }, []);
 
-  // Save data
+
   useEffect(() => {
     if (boardData.columns.length > 0) {
         saveBoardData(boardData);
     }
   }, [boardData]);
 
-  // Save theme
+
   useEffect(() => {
     saveTheme(theme);
   }, [theme]);
@@ -49,7 +49,7 @@ const App: React.FC = () => {
       }
   };
 
-  // --- Drag and Drop Logic ---
+
   const handleDragStart = (e: React.DragEvent, taskId: string) => {
     e.dataTransfer.setData('taskId', taskId);
     e.dataTransfer.effectAllowed = 'move';
@@ -69,7 +69,7 @@ const App: React.FC = () => {
     setBoardData((prev) => {
       const updatedTasks = prev.tasks.map((t) => {
           if (t.id === taskId) {
-              // Add history
+
               const newHistory = [...(t.history || [])];
               newHistory.push({
                   id: `h-${Date.now()}`,
@@ -84,7 +84,7 @@ const App: React.FC = () => {
     });
   };
 
-  // --- Task Management ---
+
   const openNewTaskModal = (e: React.MouseEvent | null, columnId: string) => {
     if (e) e.stopPropagation();
     setEditingTask(null);
@@ -118,7 +118,7 @@ const App: React.FC = () => {
     setIsModalOpen(false);
   };
 
-  // --- Helpers ---
+
   const getTasksForColumn = (columnId: string) => {
     return boardData.tasks
       .filter(t => t.columnId === columnId)
@@ -129,23 +129,18 @@ const App: React.FC = () => {
       );
   };
 
-  // Theme Config: Off-Colors
+
   const isPaper = theme === 'paper';
-  // Dark: #121212 (Void) -> Changed to #161618 (Anthracite)
-  // Light: #FFFFFF (Paper) -> Changed to #E0E2E5 (Concrete)
+
   const appBg = isPaper ? 'bg-[#E0E2E5]' : 'bg-[#161618]';
   const textMain = isPaper ? 'text-zinc-800' : 'text-[#E4E4E7]';
   const borderMain = isPaper ? 'border-zinc-300' : 'border-[#27272A]';
   const placeholderColor = isPaper ? 'placeholder-zinc-400' : 'placeholder-zinc-700';
   
-  // Specific divider colors based on feedback
-  // Dark: divide-zinc-800 to be subtle but visible (not white)
-  // Light: divide-zinc-400 to be more visible than before
+
   const divideColor = isPaper ? 'divide-zinc-400' : 'divide-zinc-800';
 
-  // Grid Calculation
-  // Calculate grid template based on collapsed state.
-  // Expanded = 1fr, Collapsed = 48px
+
   const gridTemplate = boardData.columns.map(col => 
       collapsedColumns.includes(col.id) ? '48px' : '1fr'
   ).join(' ');
@@ -153,7 +148,7 @@ const App: React.FC = () => {
   return (
     <div className={`h-[100dvh] w-full flex flex-col overflow-hidden transition-colors duration-300 ${appBg} ${textMain}`}>
       
-      {/* --- Header --- */}
+
       <header className={`relative flex-none h-14 px-4 flex items-center justify-between border-b ${borderMain}`}>
         <div className="flex items-center gap-3 select-none group">
             <div className={`w-9 h-9 flex items-center justify-center border ${borderMain} group-hover:bg-zinc-500/10 transition-colors`}>
@@ -169,7 +164,6 @@ const App: React.FC = () => {
             </div>
         </div>
 
-        {/* Center Demo Badge - Absolute centering to preserve layout balance */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:flex items-center gap-3 pointer-events-none select-none z-20">
             <div className={`w-2 h-2 rounded-full bg-red-500 animate-pulse shadow-[0_0_10px_rgba(239,68,68,0.8)]`} />
             <div className={`flex items-center justify-center font-mono text-[10px] font-bold tracking-[0.3em] uppercase border pl-3 pr-2 py-1.5 rounded ${isPaper ? 'bg-zinc-100 border-zinc-300 text-zinc-900' : 'bg-[#000] border-zinc-700 text-white shadow-[0_0_15px_rgba(0,0,0,0.5)]'}`}>
@@ -200,7 +194,7 @@ const App: React.FC = () => {
         </div>
       </header>
 
-      {/* --- Mobile Search --- */}
+
       <div className={`md:hidden flex-none border-b ${borderMain} p-2`}>
             <input
                 type="text"
@@ -211,10 +205,10 @@ const App: React.FC = () => {
             />
       </div>
 
-      {/* --- Main Board Area --- */}
+
       <main className="flex-1 relative overflow-hidden flex flex-col">
         
-        {/* DESKTOP VIEW: Dynamic Grid */}
+
         <div 
             className={`hidden md:grid h-full divide-x ${divideColor}`} 
             style={{ 
@@ -250,7 +244,7 @@ const App: React.FC = () => {
                         onDrop={(e) => handleDrop(e, col.id)}
                         className="h-full flex flex-col relative min-w-0"
                      >
-                        {/* Column Header */}
+
                         <div className={`flex-none p-4 border-b ${borderMain} flex justify-between items-center group`}>
                             <div className="flex items-center gap-2">
                                 <span className="font-mono text-xs font-bold uppercase tracking-widest opacity-70">{col.title}</span>
@@ -266,7 +260,7 @@ const App: React.FC = () => {
                             </div>
                         </div>
                         
-                        {/* Drop Zone / List */}
+
                         <div className="flex-1 overflow-y-auto scrollbar-hide">
                              {tasks.map(task => (
                                  <TaskCard 
@@ -277,7 +271,7 @@ const App: React.FC = () => {
                                     onClick={openEditTaskModal}
                                  />
                              ))}
-                             {/* Fill empty space */}
+
                              <div className="flex-1 min-h-[50px]" />
                         </div>
                      </div>
@@ -285,7 +279,7 @@ const App: React.FC = () => {
              })}
         </div>
 
-        {/* MOBILE VIEW */}
+
         <div className="md:hidden flex-1 flex flex-col relative">
              {boardData.columns.map((col) => {
                  if (col.id !== activeColumnId) return null;
@@ -330,7 +324,7 @@ const App: React.FC = () => {
 
       </main>
 
-      {/* --- Mobile Bottom Nav --- */}
+
       <div className={`md:hidden flex-none h-16 border-t ${borderMain} flex`}>
             {boardData.columns.map((col) => {
                  const isActive = activeColumnId === col.id;
